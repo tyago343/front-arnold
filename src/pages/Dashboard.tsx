@@ -5,26 +5,28 @@ import { IndoorMock } from "../types/Indoor";
 import { useState } from "react";
 
 const Dashboard = () => {
-  const [fansStatus, setFansStatus] = useState(false);
-  const [waterPumpStatus, setWaterPumpStatus] = useState(false);
+  const [fansStatus, setFansStatus] = useState(() => IndoorMock.fansStatus);
+  const [waterPumpStatus, setWaterPumpStatus] = useState(
+    () => IndoorMock.waterPumpStatus
+  );
   return (
     <AuthenticatedLayout>
       <Collapsible indoor={IndoorMock}>
         <section>
-          <div className="flex justify-between">
+          <div className="grid grid-cols-3 pb-5 items-center">
             <p>Temperature: {IndoorMock.temperature}</p>
             <p>Humidity: {IndoorMock.humidity}</p>
-            <div>
+            <div className="flex justify-center">
               <Toggle
                 checked={fansStatus}
                 onChange={() => setFansStatus(!fansStatus)}
               />
             </div>
           </div>
-          <div className="flex justify-between">
-            <p>PH: 7.2</p>
-            <p>EC: 2.1</p>
-            <div>
+          <div className="grid grid-cols-3 pb-5 items-center">
+            <p>PH: {IndoorMock.ph} </p>
+            <p>EC: {IndoorMock.ec}</p>
+            <div className="flex justify-center">
               <Toggle
                 checked={waterPumpStatus}
                 onChange={() => setWaterPumpStatus(!waterPumpStatus)}
@@ -32,7 +34,7 @@ const Dashboard = () => {
             </div>
           </div>
         </section>
-        <section className="text-black">
+        <section>
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white">
               <tbody>

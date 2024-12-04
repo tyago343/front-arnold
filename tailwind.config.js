@@ -8,8 +8,8 @@ export default {
         primary: "#fffec8", // Fondo principal o elementos destacados
         primaryDark: "#ccc89a", // Para bordes o variantes contrastadas del fondo
         secondary: "#d8fd94", // Elementos secundarios o destacados suaves
-        success: "#bded7e", // Indicadores de éxito (botones, badges)
         successDark: "#8fc65b", // Textos de éxito o gráficos contrastados
+        success: "#c8e6c9", // Verde pastel para el header del Collapsible
         warning: "#fe9d97", // Alertas suaves o elementos de precaución
         warningDark: "#e86b63", // Indicadores de advertencia más fuertes
         error: "#fe495f", // Alertas críticas o mensajes de error
@@ -24,6 +24,7 @@ export default {
         neutralLight: "#f5f5f5", // Fondo general para el dashboard
         neutral: "#b3b3b3", // Bordes, íconos, o textos secundarios
         neutralDark: "#4d4d4d", // Textos principales y elementos clave
+        neutralLighter: "#e0e0e0", // Fondo más claro para el contenido del Collapsible
 
         // Fondos con opacidad (para gráficos)
         graphSuccess: "rgba(189, 237, 126, 0.2)", // Relleno de gráficos de éxito
