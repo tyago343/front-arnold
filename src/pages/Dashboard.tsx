@@ -3,9 +3,12 @@ import Collapsible from "../components/ui/Collapsible/index";
 import AuthenticatedLayout from "../layouts/authenticated.layout";
 import { IndoorMock } from "../types/Indoor";
 import { useState } from "react";
+import { useDHT22Data } from "../hooks/useDHT22Data";
 
 const Dashboard = () => {
+  const { temperature, humidity } = useDHT22Data();
   const [fansStatus, setFansStatus] = useState(() => IndoorMock.fansStatus);
+
   const [waterPumpStatus, setWaterPumpStatus] = useState(
     () => IndoorMock.waterPumpStatus
   );
@@ -14,8 +17,8 @@ const Dashboard = () => {
       <Collapsible indoor={IndoorMock}>
         <section>
           <div className="grid grid-cols-3 pb-5 items-center">
-            <p>Temperature: {IndoorMock.temperature}</p>
-            <p>Humidity: {IndoorMock.humidity}</p>
+            <p>Temperature: {temperature}</p>
+            <p>Humidity: {humidity}</p>
             <div className="flex justify-center">
               <Toggle
                 checked={fansStatus}

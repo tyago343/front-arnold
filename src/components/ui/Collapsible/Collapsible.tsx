@@ -22,14 +22,14 @@ export const Collapsible = ({ indoor, children }: CollapsibleProps) => {
         <div className="text-center">{indoor.temperature}</div>
         <div className="flex items-center justify-evenly">
           <div>
-            <BsFileRuled />
+            <BsFileRuled size={24} />
           </div>
           <div
             className={`transition-transform duration-500 ease-in-out ${
               isOpen ? "rotate-180" : "rotate-0"
             }`}
           >
-            <BsArrowDownShort />
+            <BsArrowDownShort size={24} />
           </div>
         </div>
       </div>
