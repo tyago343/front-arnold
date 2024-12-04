@@ -17,13 +17,15 @@ export const Collapsible = ({ indoor, children }: CollapsibleProps) => {
         <h2>{indoor.name}</h2>
         <div>{indoor.phase}</div>
         <div>{indoor.temperature}</div>
-        <div>{"Dashboard"}</div>
-        <div
-          className={`transition-transform duration-500 ease-in-out ${
-            isOpen ? "rotate-180" : "rotate-0"
-          }`}
-        >
-          <BsArrowDownShort />
+        <div className="flex items-center justify-between">
+          <div>{"Dashboard"}</div>
+          <div
+            className={`transition-transform duration-500 ease-in-out ${
+              isOpen ? "rotate-180" : "rotate-0"
+            }`}
+          >
+            <BsArrowDownShort />
+          </div>
         </div>
       </div>
       <div
