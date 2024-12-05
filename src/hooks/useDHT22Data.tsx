@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { Dht22Data, Dht22DataBuilder } from "../types/dht22Data";
 import { io } from "socket.io-client";
+import { formatTemperature } from "../utils/temperature.utils";
+import { formatHumidity } from "../utils/humidity.utils";
 const initialValues = Dht22DataBuilder({ temperature: 21.6, humidity: 52.8 });
 interface Dht22DataResponse {
-  temperature: number;
-  humidity: number;
+  temperature: string;
+  humidity: string;
   error: string | null;
   isLoading: boolean;
 }
 const useDHT22Data = (
-  initialValue: { temperature: number; humidity: number } = initialValues
+  initialValue: { temperature: number; humidity: number } = initialValues,
+  unit: "C" | "F" = "C"
 ): Dht22DataResponse => {
   const [data, setData] = useState<Dht22Data>(initialValue);
   const [error, setError] = useState<string | null>(null);
@@ -29,6 +32,8 @@ const useDHT22Data = (
       socket.disconnect();
     };
   }, []);
-  return { ...data, error, isLoading };
+  const temperature = formatTemperature(data.temperature, { unit });
+  const humidity = formatHumidity(data.humidity);
+  return { temperature, humidity, error, isLoading };
 };
 export { useDHT22Data };
