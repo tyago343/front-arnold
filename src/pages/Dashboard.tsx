@@ -40,8 +40,8 @@ function Chart() {
     labels: data.map((item) => item.time), // Eje horizontal: hora
     datasets: [
       {
-        label: "Temperatura (°C)",
-        data: data.map((item) => item.temperature), // Eje vertical: temperatura
+        label: `Temperatura (°${data[0].temperature.unit})`,
+        data: data.map((item) => item.temperature.value), // Eje vertical: temperatura
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderWidth: 2,
@@ -74,9 +74,13 @@ function Chart() {
       y: {
         title: {
           display: true,
-          text: "Temperatura (°C)",
+          text: `Temperatura (°${data[0].temperature.unit})`,
         },
-        min: 0, // Ajusta según tu rango esperado
+        min: 20,
+        max: 30,
+        ticks: {
+          stepSize: 2,
+        },
       },
     },
   };

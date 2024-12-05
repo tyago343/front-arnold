@@ -42,14 +42,14 @@ export function generateRandomDht22DataHistorical(count: number): Dht22Data[] {
   const data: Dht22Data[] = [];
   for (let i = 0; i < count; i++) {
     const temperature = {
-      value: Math.random() * 40,
+      value: 23 + Math.random() * 4,
       unit: "C" as TemperatureUnit,
     };
     const humidity = Math.random() * 100;
     data.push({
       temperature,
       humidity,
-      time: time.toLocaleString("es-ES", {
+      time: new Date(time).toLocaleString("es-ES", {
         day: "2-digit",
         month: "2-digit",
         hour: "2-digit",
@@ -58,15 +58,8 @@ export function generateRandomDht22DataHistorical(count: number): Dht22Data[] {
     });
     time.setHours(time.getHours() - 1);
   }
-  return data
-    .sort((a, b) => new Date(a.time!).getTime() - new Date(b.time!).getTime())
-    .map((entry) => ({
-      ...entry,
-      time: entry.time
-        ? `${new Date(entry.time).getHours()}:${new Date(entry.time)
-            .getMinutes()
-            .toString()
-            .padStart(2, "0")}`
-        : undefined,
-    }));
+
+  return data.sort(
+    (a, b) => new Date(a.time!).getTime() - new Date(b.time!).getTime()
+  );
 }
