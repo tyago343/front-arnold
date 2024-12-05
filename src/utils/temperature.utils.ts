@@ -1,9 +1,11 @@
+import { TemperatureUnit } from "@Types/dht22Data";
+
 export function formatTemperature(
   temperature: number,
   {
     unit = "C",
   }: {
-    unit?: "C" | "F";
+    unit?: TemperatureUnit;
   } = {}
 ): string {
   return `${temperature}°${unit}`;
