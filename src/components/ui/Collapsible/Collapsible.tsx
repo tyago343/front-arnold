@@ -1,5 +1,5 @@
 import React from "react";
-import { Indoor } from "src/types/Indoor";
+import { Indoor } from "@Types/Indoor";
 import { BsArrowDownShort } from "react-icons/bs";
 import { BsFileRuled } from "react-icons/bs";
 import { Link } from "react-router";

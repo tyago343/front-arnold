@@ -1,8 +1,8 @@
 import Toggle from "@components/ui/Toggle";
 import Collapsible from "@components/ui/Collapsible";
-import { IndoorMock } from "../types/Indoor";
 import { useState } from "react";
-import { useDHT22Data } from "../hooks/useDHT22Data";
+import { IndoorMock } from "@Types/Indoor";
+import { useDHT22Data } from "@hooks/useDHT22Data";
 
 const Home = () => {
   const { temperature, humidity } = useDHT22Data();

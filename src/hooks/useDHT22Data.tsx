@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Dht22Data, Dht22DataBuilder } from "../types/dht22Data";
 import { io } from "socket.io-client";
-import { formatTemperature } from "../utils/temperature.utils";
-import { formatHumidity } from "../utils/humidity.utils";
+import { formatTemperature } from "@utils/temperature.utils";
+import { formatHumidity } from "@utils/humidity.utils";
+import { Dht22Data, Dht22DataBuilder } from "@Types/dht22Data";
 const initialValues = Dht22DataBuilder({ temperature: 21.6, humidity: 52.8 });
 interface Dht22DataResponse {
   temperature: string;

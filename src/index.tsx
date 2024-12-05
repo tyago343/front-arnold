@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router";
-import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
 import AuthenticatedLayout from "@layouts/authenticated.layout";
+import Home from "@pages/Home";
+import Dashboard from "@pages/Dashboard";
 
 export default function App() {
   return (

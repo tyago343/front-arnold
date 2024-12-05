@@ -34,9 +34,21 @@
       "@hooks/*": [
         "src/hooks/*"
       ],
-      "@types/*": [
+      "@Types/*": [
         "src/types/*"
-      ]
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
     }
   },
   "include": [
