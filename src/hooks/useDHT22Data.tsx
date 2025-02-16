@@ -8,12 +8,7 @@ import {
   Dht22DataResponse,
   TemperatureUnit,
 } from "@Types/dht22Data";
-// interface Dht22DataResponse {
-//   temperature: string;
-//   humidity: string;
-//   error: string | null;
-//   isLoading: boolean;
-// }
+
 const useDHT22Data = (unit: TemperatureUnit = "C") => {
   const [data, setData] = useState<Dht22Data>({
     temperature: { value: 0, unit: unit },

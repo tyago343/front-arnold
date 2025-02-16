@@ -37,21 +37,20 @@ export default Dashboard;
 function Chart() {
   const data = generateRandomDht22DataHistorical(5);
   const chartData = {
-    labels: data.map((item) => item.time), // Eje horizontal: hora
+    labels: data.map((item) => item.time),
     datasets: [
       {
         label: `Temperatura (°${data[0].temperature.unit})`,
-        data: data.map((item) => item.temperature.value), // Eje vertical: temperatura
+        data: data.map((item) => item.temperature.value),
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderWidth: 2,
         pointRadius: 4,
-        tension: 0.3, // Suavizado de las líneas
+        tension: 0.3,
       },
     ],
   };
 
-  // Opciones del gráfico
   const chartOptions = {
     responsive: true,
     plugins: {

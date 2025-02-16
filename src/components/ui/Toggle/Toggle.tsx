@@ -1,9 +1,10 @@
 interface ToggleProps {
   checked: boolean;
+  name?: string;
   onChange: () => void;
 }
 
-export const Toggle = ({ checked, onChange }: ToggleProps) => {
+export const Toggle = ({ checked, onChange, name }: ToggleProps) => {
   return (
     <label className="flex items-center space-x-2">
       <div className="relative">
@@ -12,6 +13,7 @@ export const Toggle = ({ checked, onChange }: ToggleProps) => {
           checked={checked}
           onChange={onChange}
           className="sr-only"
+          name={name}
         />
         <div
           className={`block w-14 h-8 rounded-full transition-colors duration-300 ${
