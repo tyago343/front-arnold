@@ -2,10 +2,10 @@ import Toggle from "@components/ui/Toggle";
 import Collapsible from "@components/ui/Collapsible";
 import { useState } from "react";
 import { IndoorMock } from "@Types/Indoor";
-import { useDHT22Data } from "@hooks/useDHT22Data";
+// import { useDHT22Data } from "@hooks/useDHT22Data";
 
 const Home = () => {
-  const { temperature, humidity } = useDHT22Data();
+  // const { temperature, humidity } = useDHT22Data();
   const [fansStatus, setFansStatus] = useState(() => IndoorMock.fansStatus);
 
   const [waterPumpStatus, setWaterPumpStatus] = useState(
@@ -16,8 +16,8 @@ const Home = () => {
     <Collapsible indoor={IndoorMock}>
       <section>
         <div className="grid grid-cols-3 pb-5 items-center">
-          <p>Temperatura: {temperature}</p>
-          <p>Humedad: {humidity}</p>
+          {/* <p>Temperatura: {temperature}</p>
+          <p>Humedad: {humidity}</p> */}
           <div className="flex justify-center">
             <Toggle
               checked={fansStatus}
