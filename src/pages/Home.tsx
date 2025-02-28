@@ -16,8 +16,8 @@ const Home = () => {
     <Collapsible indoor={IndoorMock}>
       <section>
         <div className="grid grid-cols-3 pb-5 items-center">
-          {/* <p>Temperatura: {temperature}</p>
-          <p>Humedad: {humidity}</p> */}
+          <p>Temperatura: {`28.2C`}</p>
+          <p>Humedad: {`54%`}</p>
           <div className="flex justify-center">
             <Toggle
               checked={fansStatus}
